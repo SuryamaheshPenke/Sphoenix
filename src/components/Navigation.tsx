@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useNavigate } from 'react-router-dom';
-import phoenixLogo from '@/assets/phoenix-logo-transparent.png';
+import phoenixLogo from '@/assets/phoenix-logo-blue.png';
 
 const Navigation = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');

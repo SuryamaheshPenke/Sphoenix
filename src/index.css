@@ -20,9 +20,9 @@ All colors MUST be HSL for consistency and theming.
     --popover: 0 0% 100%;
     --popover-foreground: 224 71% 4%;
 
-    /* Phoenix Brand Colors */
-    --primary: 14 100% 60%;
-    --primary-light: 14 100% 70%;
+    /* Blue Brand Colors */
+    --primary: 217 91% 60%;
+    --primary-light: 210 100% 70%;
     --primary-foreground: 0 0% 98%;
 
     /* Secondary Colors */
@@ -32,9 +32,9 @@ All colors MUST be HSL for consistency and theming.
     --muted: 220 14.3% 95.9%;
     --muted-foreground: 220 8.9% 46.1%;
 
-    /* Phoenix Accent Colors */
-    --accent: 0 84% 60%;
-    --accent-light: 14 100% 75%;
+    /* Blue Accent Colors */
+    --accent: 210 100% 50%;
+    --accent-light: 217 91% 70%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -91,10 +91,10 @@ All colors MUST be HSL for consistency and theming.
     --popover: 224 71% 4%;
     --popover-foreground: 210 20% 98%;
 
-    /* Phoenix Brand Colors */
-    --primary: 14 100% 60%;
-    --primary-light: 14 100% 70%;
-    --primary-foreground: 224 71% 4%;
+    /* Blue Brand Colors */
+    --primary: 217 91% 60%;
+    --primary-light: 210 100% 70%;
+    --primary-foreground: 0 0% 98%;
 
     /* Secondary Colors */
     --secondary: 215 27.9% 16.9%;
@@ -103,10 +103,10 @@ All colors MUST be HSL for consistency and theming.
     --muted: 215 27.9% 16.9%;
     --muted-foreground: 217.9 10.6% 64.9%;
 
-    /* Phoenix Accent Colors */
-    --accent: 0 84% 60%;
-    --accent-light: 14 100% 75%;
-    --accent-foreground: 224 71% 4%;
+    /* Blue Accent Colors */
+    --accent: 210 100% 50%;
+    --accent-light: 217 91% 70%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 20% 98%;

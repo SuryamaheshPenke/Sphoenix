@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import phoenixLogo from '@/assets/phoenix-logo-transparent.png';
+import phoenixLogo from '@/assets/phoenix-logo-blue.png';
 
 const PhoenixSpinner = ({ onComplete }: { onComplete: () => void }) => {
   const [isVisible, setIsVisible] = useState(true);
