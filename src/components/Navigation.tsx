@@ -89,11 +89,15 @@ const Navigation = () => {
             onClick={() => handleNavigation('/')}
             className="flex items-center space-x-2 cursor-pointer hover-scale"
           >
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">C</span>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden">
+              <img 
+                src="/src/assets/phoenix-logo.png" 
+                alt="Sphoenix Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="font-poppins font-bold text-xl gradient-text">
-              CodeHire Global
+              Sphoenix
             </span>
           </div>
 
