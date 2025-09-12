@@ -37,7 +37,7 @@ const About = () => {
               <h1 className="text-5xl md:text-6xl font-poppins font-bold mb-6">
                 About{' '}
                 <span className="gradient-text bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  CodeHire Global
+                  Sphoenix
                 </span>
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed">
@@ -84,7 +84,7 @@ const About = () => {
               </h2>
               <div className="text-lg text-muted-foreground leading-relaxed space-y-6">
                 <p>
-                  Founded with a vision to bridge the gap between talent and technology, CodeHire Global has been 
+                  Founded with a vision to bridge the gap between talent and technology, Sphoenix has been 
                   at the forefront of digital transformation for over 8 years. What started as a small consultancy 
                   has grown into a global leader in technology training, IT consulting, and strategic staffing.
                 </p>

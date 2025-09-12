@@ -10,7 +10,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -20,6 +20,11 @@ const Navigation = () => {
     if (savedTheme) {
       setTheme(savedTheme);
       document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    } else {
+      // Default to dark theme
+      setTheme('dark');
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     }
   }, []);
 
@@ -96,9 +101,6 @@ const Navigation = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <span className="font-poppins font-bold text-xl gradient-text">
-              Sphoenix
-            </span>
           </div>
 
           {/* Desktop Navigation */}

@@ -6,6 +6,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import TechnologyTraining from "./pages/career-services/TechnologyTraining";
+import ResumeEnhancement from "./pages/career-services/ResumeEnhancement";
+import InterviewGuidance from "./pages/career-services/InterviewGuidance";
+import JobPlacement from "./pages/career-services/JobPlacement";
+import SkillAssessment from "./pages/career-services/SkillAssessment";
+import DigitalTransformation from "./pages/it-consulting/DigitalTransformation";
+import TechnologyStrategy from "./pages/it-consulting/TechnologyStrategy";
+import CloudInfrastructure from "./pages/it-consulting/CloudInfrastructure";
+import SoftwareArchitecture from "./pages/it-consulting/SoftwareArchitecture";
+import BusinessAnalysis from "./pages/it-consulting/BusinessAnalysis";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +29,15 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/career-services/technology-training" element={<TechnologyTraining />} />
+          <Route path="/career-services/resume-enhancement" element={<ResumeEnhancement />} />
+          <Route path="/career-services/interview-guidance" element={<InterviewGuidance />} />
+          <Route path="/career-services/job-placement" element={<JobPlacement />} />
+          <Route path="/career-services/skill-assessment" element={<SkillAssessment />} />
+          <Route path="/it-consulting/digital-transformation" element={<DigitalTransformation />} />
+          <Route path="/it-consulting/technology-strategy" element={<TechnologyStrategy />} />
+          <Route path="/it-consulting/cloud-infrastructure" element={<CloudInfrastructure />} />
+          <Route path="/it-consulting/software-architecture" element={<SoftwareArchitecture />} />
+          <Route path="/it-consulting/business-analysis" element={<BusinessAnalysis />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

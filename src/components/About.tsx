@@ -34,10 +34,10 @@ const About = () => {
               <span className="gradient-text">Placement Assistance</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              At Code Hire Global, we are dedicated to shaping the careers of aspiring professionals through rigorous job training programs. Our training modules are designed to equip individuals with the skills and knowledge needed to excel in their chosen fields. We go the extra mile by providing personalized placement assistance to ensure that our trainees step confidently into the professional world.
+              At Sphoenix, we are dedicated to shaping the careers of aspiring professionals through rigorous job training programs. Our training modules are designed to equip individuals with the skills and knowledge needed to excel in their chosen fields. We go the extra mile by providing personalized placement assistance to ensure that our trainees step confidently into the professional world.
             </p>
             <Button
-              onClick={() => navigate('/about')}
+              onClick={() => navigate('/contact')}
               className="bg-gradient-primary text-primary-foreground font-medium px-6 py-3 rounded-full hover-scale transition-smooth"
             >
               Learn More About Us
