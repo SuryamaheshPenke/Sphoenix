@@ -94,11 +94,11 @@ const Navigation = () => {
             onClick={() => handleNavigation('/')}
             className="flex items-center space-x-2 cursor-pointer hover-scale"
           >
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden">
               <img 
-                src="/src/assets/phoenix-logo.png" 
-                alt="Sphoenix Logo" 
-                className="w-full h-full object-contain"
+                src="/src/assets/phoenix-icon.png" 
+                alt="Sphoenix" 
+                className="w-full h-full object-contain hover-scale"
               />
             </div>
           </div>
