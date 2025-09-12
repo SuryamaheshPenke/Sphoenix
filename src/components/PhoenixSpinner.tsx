@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
+import phoenixLogo from '@/assets/phoenix-logo-transparent.png';
 
-const LoadingSpinner = ({ onComplete }: { onComplete: () => void }) => {
+const PhoenixSpinner = ({ onComplete }: { onComplete: () => void }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onComplete, 500); // Allow fade out animation to complete
-    }, 2000); // Show loading for 2 seconds
+      setTimeout(onComplete, 500);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, [onComplete]);
@@ -16,15 +17,15 @@ const LoadingSpinner = ({ onComplete }: { onComplete: () => void }) => {
     return (
       <div className="fixed inset-0 z-[9999] bg-background flex items-center justify-center animate-fade-out">
         <div className="relative">
-          <div className="phoenix-flying">
+          <div className="phoenix-soar">
             <img 
-              src="/src/assets/phoenix-icon.png" 
-              alt="Loading..." 
-              className="w-16 h-16 object-contain"
+              src={phoenixLogo} 
+              alt="Sphoenix Loading..." 
+              className="w-20 h-20 object-contain"
             />
           </div>
-          <div className="mt-4 text-center">
-            <div className="loading-dots">
+          <div className="mt-6 text-center">
+            <div className="phoenix-flame-dots">
               <span></span>
               <span></span>
               <span></span>
@@ -38,15 +39,15 @@ const LoadingSpinner = ({ onComplete }: { onComplete: () => void }) => {
   return (
     <div className="fixed inset-0 z-[9999] bg-background flex items-center justify-center">
       <div className="relative">
-        <div className="phoenix-flying">
+        <div className="phoenix-soar">
           <img 
-            src="/src/assets/phoenix-icon.png" 
-            alt="Loading..." 
-            className="w-16 h-16 object-contain"
+            src={phoenixLogo} 
+            alt="Sphoenix Loading..." 
+            className="w-20 h-20 object-contain"
           />
         </div>
-        <div className="mt-4 text-center">
-          <div className="loading-dots">
+        <div className="mt-6 text-center">
+          <div className="phoenix-flame-dots">
             <span></span>
             <span></span>
             <span></span>
@@ -57,4 +58,4 @@ const LoadingSpinner = ({ onComplete }: { onComplete: () => void }) => {
   );
 };
 
-export default LoadingSpinner;
+export default PhoenixSpinner;

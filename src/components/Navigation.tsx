@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useNavigate } from 'react-router-dom';
+import phoenixLogo from '@/assets/phoenix-logo-transparent.png';
 
 const Navigation = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
@@ -46,6 +47,7 @@ const Navigation = () => {
   const handleNavigation = (path: string) => {
     navigate(path);
     setIsMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const careerServicesItems = [
@@ -96,9 +98,9 @@ const Navigation = () => {
           >
             <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden">
               <img 
-                src="/src/assets/phoenix-icon.png" 
+                src={phoenixLogo} 
                 alt="Sphoenix" 
-                className="w-full h-full object-contain hover-scale"
+                className="w-full h-full object-contain hover-scale filter drop-shadow-lg"
               />
             </div>
           </div>
