@@ -39,8 +39,9 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        {loading && <PhoenixSpinner onComplete={() => setLoading(false)} />}
-        <BrowserRouter>
+        <div className="dark">
+          {loading && <PhoenixSpinner onComplete={() => setLoading(false)} />}
+          <BrowserRouter>
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
@@ -68,6 +69,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        </div>
       </TooltipProvider>
     </QueryClientProvider>
   );

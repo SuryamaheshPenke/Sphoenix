@@ -12,7 +12,7 @@ const Testimonials = () => {
       role: 'Software Engineer',
       company: 'TechCorp',
       image: 'https://images.unsplash.com/photo-1494790108755-2616b332c4e3?w=100&h=100&fit=crop&crop=face',
-      content: 'CodeHire Global transformed my career completely. Their comprehensive training program equipped me with cutting-edge skills in cloud computing and DevOps. The personalized mentorship and job placement assistance helped me land my dream job at a Fortune 500 company.',
+      content: 'Sphoenix transformed my career completely. Their comprehensive training program equipped me with cutting-edge skills in cloud computing and DevOps. The personalized mentorship and job placement assistance helped me land my dream job at a Fortune 500 company.',
       rating: 5
     },
     {
@@ -20,7 +20,7 @@ const Testimonials = () => {
       role: 'Data Scientist',
       company: 'DataFlow Solutions',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
-      content: 'The IT consulting services provided by CodeHire Global were exceptional. They helped us modernize our entire data infrastructure and implement machine learning solutions that increased our efficiency by 40%. Their expertise is unmatched.',
+      content: 'The IT consulting services provided by Sphoenix were exceptional. They helped us modernize our entire data infrastructure and implement machine learning solutions that increased our efficiency by 40%. Their expertise is unmatched.',
       rating: 5
     },
     {
@@ -28,7 +28,7 @@ const Testimonials = () => {
       role: 'Project Manager',
       company: 'InnovateTech',
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
-      content: 'Working with CodeHire Global for our staffing needs was a game-changer. They provided us with highly skilled developers who seamlessly integrated into our team. The quality of candidates and their technical expertise exceeded our expectations.',
+      content: 'Working with Sphoenix for our staffing needs was a game-changer. They provided us with highly skilled developers who seamlessly integrated into our team. The quality of candidates and their technical expertise exceeded our expectations.',
       rating: 5
     },
     {
@@ -36,7 +36,7 @@ const Testimonials = () => {
       role: 'CTO',
       company: 'StartupX',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
-      content: 'CodeHire Global\'s digital transformation consulting helped us scale from a small startup to a thriving tech company. Their strategic guidance and technical expertise were instrumental in our 300% growth over two years.',
+      content: 'Sphoenix\'s digital transformation consulting helped us scale from a small startup to a thriving tech company. Their strategic guidance and technical expertise were instrumental in our 300% growth over two years.',
       rating: 5
     },
     {

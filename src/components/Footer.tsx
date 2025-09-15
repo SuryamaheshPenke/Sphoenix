@@ -41,16 +41,14 @@ const Footer = () => {
         <div className="py-16 grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">C</span>
-              </div>
+            <div className="flex items-center space-x-2 mb-6 animate-fade-in-up">
+              <img src="/src/assets/phoenix-logo-blue.png" alt="Sphoenix" className="w-8 h-8" />
               <span className="font-poppins font-bold text-xl text-background">
-                CodeHire Global
+                Sphoenix
               </span>
             </div>
-            <p className="text-background/80 mb-6 leading-relaxed">
-              At CodeHire, we simplify talent discovery and deliver excellence with integrity, innovation, and impact. Empowering careers and transforming businesses through technology.
+            <p className="text-background/80 mb-6 leading-relaxed animate-fade-in-up">
+              At Sphoenix, we simplify talent discovery and deliver excellence with integrity, innovation, and impact. Empowering careers and transforming businesses through technology.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -136,16 +134,16 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                 <div>
-                  <a href="tel:+918712178586" className="text-background/80 hover:text-background transition-smooth">
-                    +91 8712178586
+                  <a href="tel:+917673949165" className="text-background/80 hover:text-background transition-smooth">
+                    +91 7673949165
                   </a>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
                 <div>
-                  <a href="mailto:info@codehireglobal.com" className="text-background/80 hover:text-background transition-smooth">
-                    info@codehireglobal.com
+                  <a href="mailto:info@sphoenixit.com" className="text-background/80 hover:text-background transition-smooth">
+                    info@sphoenixit.com
                   </a>
                 </div>
               </div>
@@ -174,7 +172,7 @@ const Footer = () => {
         <div className="border-t border-background/20 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-background/70 text-sm">
-              © 2024 CodeHire Global. All rights reserved.
+              © 2024 Sphoenix. All rights reserved.
             </div>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-background/70 hover:text-background transition-smooth">

@@ -31,14 +31,14 @@ const Contact = () => {
     {
       icon: <Phone className="h-6 w-6" />,
       title: 'Make A Call',
-      details: '+91 8712178586',
-      action: 'tel:+918712178586'
+      details: '+91 7673949165',
+      action: 'tel:+917673949165'
     },
     {
       icon: <Mail className="h-6 w-6" />,
       title: 'Email Address',
-      details: 'info@codehireglobal.com',
-      action: 'mailto:info@codehireglobal.com'
+      details: 'info@sphoenixit.com',
+      action: 'mailto:info@sphoenixit.com'
     },
     {
       icon: <Clock className="h-6 w-6" />,
@@ -80,7 +80,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 animate-slide-in-left">
           {/* Contact Form */}
           <div className="animate-scale-in">
             <Card className="bg-gradient-card border-border/50 shadow-large">

@@ -52,7 +52,7 @@ const WhyChooseUs = () => {
             <span className="gradient-text">Transforming Careers</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            At Code Hire Global Solutions, we specialize in providing comprehensive technology training, 
+            At Sphoenix, we specialize in providing comprehensive technology training,
             job placement assistance, and personalized career counseling services. Our mission is to equip 
             individuals with the skills and knowledge needed to excel in the ever-evolving tech industry.
           </p>
