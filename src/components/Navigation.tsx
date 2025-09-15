@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown, Sun, Moon, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -11,22 +11,13 @@ import { useNavigate } from 'react-router-dom';
 import phoenixLogo from '@/assets/phoenix-logo-blue.png';
 
 const Navigation = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-    } else {
-      // Default to dark theme
-      setTheme('dark');
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    }
+    // Force dark theme
+    document.documentElement.classList.add('dark');
   }, []);
 
   useEffect(() => {
@@ -36,13 +27,6 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
-  };
 
   const handleNavigation = (path: string) => {
     navigate(path);
@@ -83,7 +67,7 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-smooth animate-fade-in-down ${
         isScrolled
           ? 'glass-effect shadow-medium'
           : 'bg-background/80 backdrop-blur-sm'
@@ -91,26 +75,29 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo with Company Name */}
           <div
             onClick={() => handleNavigation('/')}
-            className="flex items-center space-x-2 cursor-pointer hover-scale"
+            className="flex items-center space-x-3 cursor-pointer hover-scale animate-bounce-subtle"
           >
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden animate-pulse-glow">
               <img 
                 src={phoenixLogo} 
                 alt="Sphoenix" 
                 className="w-full h-full object-contain hover-scale filter drop-shadow-lg"
               />
             </div>
+            <span className="font-poppins font-bold text-xl text-foreground gradient-text">
+              Sphoenix
+            </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8 animate-slide-in-left">
             <Button
               variant="ghost"
               onClick={() => handleNavigation('/')}
-              className="font-medium transition-smooth hover:text-primary"
+              className="font-medium transition-smooth hover:text-primary hover-scale animate-delay-100"
             >
               Home
             </Button>
@@ -118,7 +105,7 @@ const Navigation = () => {
             <Button
               variant="ghost"
               onClick={() => handleNavigation('/about')}
-              className="font-medium transition-smooth hover:text-primary"
+              className="font-medium transition-smooth hover:text-primary hover-scale animate-delay-200"
             >
               About Us
             </Button>
@@ -127,10 +114,10 @@ const Navigation = () => {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  className="font-medium transition-smooth hover:text-primary flex items-center gap-1"
+                  className="font-medium transition-smooth hover:text-primary hover-scale flex items-center gap-1 animate-delay-300"
                 >
                   Career Services
-                  <ChevronDown className="h-4 w-4" />
+                  <ChevronDown className="h-4 w-4 animate-bounce-subtle" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56 glass-effect border-border/50">
@@ -215,20 +202,10 @@ const Navigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Theme Toggle */}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={toggleTheme}
-              className="transition-smooth hover-scale"
-            >
-              {theme === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
-            </Button>
-
             {/* CTA Button */}
             <Button
               onClick={() => handleNavigation('/contact')}
-              className="bg-gradient-primary text-primary-foreground font-medium px-6 py-2 rounded-full transition-smooth hover-scale shadow-glow"
+              className="bg-gradient-primary text-primary-foreground font-medium px-6 py-2 rounded-full transition-smooth hover-scale shadow-glow animate-pulse-glow animate-delay-500"
             >
               Get Started
             </Button>
@@ -237,17 +214,10 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-2">
             <Button
-              variant="outline"
-              size="sm"
-              onClick={toggleTheme}
-              className="transition-smooth"
-            >
-              {theme === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
-            </Button>
-            <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="hover-scale transition-smooth animate-pulse-glow"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>

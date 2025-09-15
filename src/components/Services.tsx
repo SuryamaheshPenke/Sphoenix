@@ -96,11 +96,11 @@ const Services = () => {
 
   const ServiceCard = ({ service, index }: { service: any; index: number }) => (
     <Card 
-      className="group hover-lift transition-smooth bg-gradient-card border-border/50 overflow-hidden"
+      className="group hover-lift hover-glow transition-smooth bg-gradient-card border-border/50 overflow-hidden animate-scale-in"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <CardHeader>
-        <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center text-primary-foreground mb-4 group-hover:scale-110 transition-smooth">
+        <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center text-primary-foreground mb-4 group-hover:scale-110 transition-smooth animate-pulse-glow animate-rotate-slow group-hover:animate-bounce-subtle">
           {service.icon}
         </div>
         <CardTitle className="text-xl font-poppins group-hover:text-primary transition-smooth">
@@ -171,14 +171,14 @@ const Services = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16 animate-fade-in-up">
+        <div className="text-center mt-16 animate-fade-in-up animate-delay-500">
           <Button
             onClick={() => navigate('/contact')}
             size="lg"
-            className="bg-gradient-primary text-primary-foreground font-semibold px-8 py-4 rounded-full hover-scale transition-smooth shadow-glow"
+            className="bg-gradient-primary text-primary-foreground font-semibold px-8 py-4 rounded-full hover-scale transition-smooth shadow-glow hover-glow animate-pulse-glow"
           >
             Get Started with Our Services
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="ml-2 h-5 w-5 animate-wave" />
           </Button>
         </div>
       </div>
