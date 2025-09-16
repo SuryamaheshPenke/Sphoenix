@@ -231,6 +231,10 @@ const Contact = () => {
                 <Button
                   variant="secondary"
                   className="font-semibold"
+                  onClick={() => {
+                    const el = document.getElementById('contact');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
                 >
                   Schedule a Consultation
                 </Button>

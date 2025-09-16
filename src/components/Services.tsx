@@ -135,7 +135,7 @@ const Services = () => {
         </div>
 
         {/* Career Services */}
-        <div className="mb-16">
+        <div id="career-services" className="mb-16">
           <h3 className="text-2xl font-poppins font-semibold mb-8 text-center text-foreground">
             Career Services
           </h3>

@@ -7,10 +7,10 @@ const Footer = () => {
   const navigate = useNavigate();
 
   const handleNavigation = (path: string) => {
-    if (path === '/services') {
+  if (path === '/services') {
       navigate('/');
       setTimeout(() => {
-        const servicesSection = document.getElementById('services');
+        const servicesSection = document.getElementById('career-services');
         if (servicesSection) {
           servicesSection.scrollIntoView({ behavior: 'smooth' });
         }
@@ -76,9 +76,9 @@ const Footer = () => {
               {socialLinks.map((social, index) => (
                 <Button
                   key={index}
-                  variant="outline"
+                  variant="secondary"
                   size="sm"
-                  className="w-10 h-10 p-0 border-background/20 text-background hover:text-background hover:bg-primary/20 transition-smooth hover-scale animate-pulse-glow"
+                  className="w-10 h-10 p-0 rounded-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none transition-smooth hover-scale shadow-glow"
                   onClick={() => window.open(social.url, '_blank')}
                 >
                   {social.icon}

@@ -31,6 +31,18 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const ScrollToContactIndex = () => {
+  const location = useLocation();
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const el = document.getElementById('contact');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [location]);
+  return <Index />;
+};
+
 const App = () => {
   const [loading, setLoading] = useState(true);
 
@@ -45,6 +57,7 @@ const App = () => {
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/contact" element={<ScrollToContactIndex />} />
             <Route path="/about" element={<About />} />
             <Route path="/career-services/technology-training" element={<TechnologyTraining />} />
             <Route path="/career-services/resume-enhancement" element={<ResumeEnhancement />} />
