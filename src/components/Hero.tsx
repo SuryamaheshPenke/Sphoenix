@@ -22,7 +22,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-32">
         <div className="max-w-4xl mx-auto text-center text-white">
           <div className="animate-fade-in-up animate-delay-300">
-            <h1 className="text-5xl md:text-7xl font-poppins font-bold mb-6 leading-tight animate-typing">
+            <h1 className="text-4xl md:text-5xl font-poppins font-bold mb-6 leading-tight">
               Partnering for{' '}
               <span className="gradient-text bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent animate-shimmer">
                 Digital Transformation
@@ -35,7 +35,12 @@ const Hero = () => {
 
           <div className="animate-scale-in animate-delay-500 flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button
-              onClick={() => navigate('/contact')}
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
               size="lg"
               className="bg-gradient-primary text-primary-foreground font-semibold px-8 py-4 rounded-full transition-smooth hover-scale shadow-glow text-lg hover-glow animate-pulse-glow"
             >

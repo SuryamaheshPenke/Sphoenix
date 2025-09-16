@@ -201,58 +201,6 @@ const SkillAssessment = () => {
           </div>
         </section>
 
-        {/* Pricing Section */}
-        <section className="py-20 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-poppins font-bold mb-6 text-foreground">
-                Assessment Packages
-              </h2>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8 animate-slide-in-right">
-              {[
-                {
-                  name: 'Basic Assessment',
-                  price: '$49',
-                  features: ['Technical skills evaluation', 'Basic report', 'Skill recommendations', 'Valid for 6 months']
-                },
-                {
-                  name: 'Professional Assessment',
-                  price: '$99',
-                  features: ['Complete skill assessment', 'Detailed analytics', 'Career guidance', 'Industry benchmarking', 'Valid for 1 year']
-                },
-                {
-                  name: 'Enterprise Assessment',
-                  price: '$199',
-                  features: ['Full comprehensive assessment', 'Behavioral analysis', 'Personalized coaching session', 'Career roadmap', 'Lifetime validity']
-                }
-              ].map((pkg, index) => (
-                <div
-                  key={index}
-                  className="p-8 rounded-2xl bg-gradient-card border border-border/50 hover-lift transition-smooth text-center"
-                >
-                  <h3 className="text-2xl font-poppins font-bold mb-4 text-foreground">{pkg.name}</h3>
-                  <div className="text-4xl font-bold text-primary mb-6">{pkg.price}</div>
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-muted-foreground">
-                        <CheckCircle className="h-5 w-5 text-primary" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button
-                    onClick={() => navigate('/contact')}
-                    className="w-full bg-gradient-primary text-primary-foreground hover-scale transition-smooth"
-                  >
-                    Choose Package
-                  </Button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* CTA Section */}
         <section className="py-20 bg-background">

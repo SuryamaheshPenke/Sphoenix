@@ -124,7 +124,7 @@ const Services = () => {
   );
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section id="services" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <div className="text-primary font-semibold mb-4">Service We Provide</div>

@@ -204,7 +204,15 @@ const Navigation = () => {
 
             {/* CTA Button */}
             <Button
-              onClick={() => handleNavigation('/contact')}
+              onClick={() => {
+                navigate('/');
+                setTimeout(() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 100);
+              }}
               className="bg-gradient-primary text-primary-foreground font-medium px-6 py-2 rounded-full transition-smooth hover-scale shadow-glow animate-pulse-glow animate-delay-500"
             >
               Get Started
@@ -297,7 +305,16 @@ const Navigation = () => {
               
               <div className="border-t border-border my-2"></div>
               <Button
-                onClick={() => handleNavigation('/contact')}
+                onClick={() => {
+                  navigate('/');
+                  setTimeout(() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }, 100);
+                  setIsMobileMenuOpen(false);
+                }}
                 className="bg-gradient-primary text-primary-foreground mx-4"
               >
                 Get Started

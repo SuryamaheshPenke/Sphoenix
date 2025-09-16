@@ -6,6 +6,28 @@ import { useNavigate } from 'react-router-dom';
 const Footer = () => {
   const navigate = useNavigate();
 
+  const handleNavigation = (path: string) => {
+    if (path === '/services') {
+      navigate('/');
+      setTimeout(() => {
+        const servicesSection = document.getElementById('services');
+        if (servicesSection) {
+          servicesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else if (path === '/contact') {
+      navigate('/');
+      setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      navigate(path);
+    }
+  };
+
   const quickLinks = [
     { label: 'About Us', path: '/about' },
     { label: 'Services', path: '/services' },
@@ -56,7 +78,7 @@ const Footer = () => {
                   key={index}
                   variant="outline"
                   size="sm"
-                  className="w-10 h-10 p-0 border-background/20 text-background/80 hover:text-background hover:bg-primary transition-smooth"
+                  className="w-10 h-10 p-0 border-background/20 text-background hover:text-background hover:bg-primary/20 transition-smooth hover-scale animate-pulse-glow"
                   onClick={() => window.open(social.url, '_blank')}
                 >
                   {social.icon}
@@ -72,7 +94,7 @@ const Footer = () => {
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <button
-                    onClick={() => navigate(link.path)}
+                    onClick={() => handleNavigation(link.path)}
                     className="text-background/80 hover:text-background transition-smooth flex items-center gap-2 group"
                   >
                     <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0" />
