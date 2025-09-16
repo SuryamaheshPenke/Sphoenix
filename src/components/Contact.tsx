@@ -1,9 +1,10 @@
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,11 +14,57 @@ const Contact = () => {
     service: '',
     message: ''
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      // EmailJS configuration - replace with your actual values
+      const serviceId = 'YOUR_SERVICE_ID';
+      const templateId = 'YOUR_TEMPLATE_ID';
+      const publicKey = 'YOUR_PUBLIC_KEY';
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+        to_name: 'Sphoenix Team',
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you for your message! We will get back to you within 24 hours.'
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Sorry, there was an error sending your message. Please try again or contact us directly.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -157,11 +204,28 @@ const Contact = () => {
                   
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-primary text-primary-foreground font-semibold py-3 rounded-full hover-scale transition-smooth shadow-glow"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-primary text-primary-foreground font-semibold py-3 rounded-full hover-scale transition-smooth shadow-glow disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                     <Send className="ml-2 h-5 w-5" />
                   </Button>
+                  
+                  {/* Status Message */}
+                  {submitStatus.type && (
+                    <div className={`flex items-center gap-2 p-4 rounded-lg animate-fade-in ${
+                      submitStatus.type === 'success' 
+                        ? 'bg-green-50 text-green-700 border border-green-200' 
+                        : 'bg-red-50 text-red-700 border border-red-200'
+                    }`}>
+                      {submitStatus.type === 'success' ? (
+                        <CheckCircle className="h-5 w-5 flex-shrink-0" />
+                      ) : (
+                        <AlertCircle className="h-5 w-5 flex-shrink-0" />
+                      )}
+                      <p className="text-sm font-medium">{submitStatus.message}</p>
+                    </div>
+                  )}
                 </form>
               </CardContent>
             </Card>

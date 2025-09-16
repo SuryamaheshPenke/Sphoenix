@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import phoenixLogo from '@/assets/phoenix-logo-blue.png';
+import phoenixIcon from '@/assets/phoenix-icon.png';
 
 const PhoenixSpinner = ({ onComplete }: { onComplete: () => void }) => {
   const [isVisible, setIsVisible] = useState(true);
@@ -19,7 +19,7 @@ const PhoenixSpinner = ({ onComplete }: { onComplete: () => void }) => {
         <div className="relative">
           <div className="phoenix-soar">
             <img 
-              src={phoenixLogo} 
+              src={phoenixIcon} 
               alt="Sphoenix Loading..." 
               className="w-20 h-20 object-contain"
             />
@@ -41,7 +41,7 @@ const PhoenixSpinner = ({ onComplete }: { onComplete: () => void }) => {
       <div className="relative">
         <div className="phoenix-soar">
           <img 
-            src={phoenixLogo} 
+            src={phoenixIcon} 
             alt="Sphoenix Loading..." 
             className="w-20 h-20 object-contain"
           />
