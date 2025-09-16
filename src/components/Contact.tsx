@@ -29,7 +29,7 @@ const Contact = () => {
     try {
       // EmailJS configuration - replace with your actual values
       const serviceId = 'service_11por2e';
-      const templateId = 'template_wd2ypgl';
+      const templateId = 'template_k9qitzd';
       const publicKey = '5e-yTxPE7ly7_gOBe';
 
       const templateParams = {
