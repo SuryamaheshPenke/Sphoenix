@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import phoenixLogo from '@/assets/phoenix-logo-transparent.png';
+import phoenixLogo from '@/assets/phoenix-logo-blue.png';
 
 const PhoenixSpinner = ({ onComplete }: { onComplete: () => void }) => {
   const [isVisible, setIsVisible] = useState(true);
@@ -7,21 +7,21 @@ const PhoenixSpinner = ({ onComplete }: { onComplete: () => void }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onComplete, 500);
-    }, 2000);
+      setTimeout(onComplete, 300);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, [onComplete]);
 
   if (!isVisible) {
     return (
-      <div className="fixed inset-0 z-[9999] bg-transparent flex items-center justify-center animate-fade-out">
+      <div className="fixed inset-0 z-[9999] bg-background/90 backdrop-blur-sm flex items-center justify-center animate-fade-out">
         <div className="relative">
-          <div className="animate-spin">
+          <div className="animate-spin duration-1000">
             <img 
               src={phoenixLogo} 
               alt="Sphoenix Loading..." 
-              className="w-24 h-24 object-contain"
+              className="w-16 h-16 object-contain"
             />
           </div>
         </div>
@@ -30,13 +30,13 @@ const PhoenixSpinner = ({ onComplete }: { onComplete: () => void }) => {
   }
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-transparent flex items-center justify-center">
+    <div className="fixed inset-0 z-[9999] bg-background/90 backdrop-blur-sm flex items-center justify-center">
       <div className="relative">
-        <div className="animate-spin">
+        <div className="animate-spin duration-1000">
           <img 
             src={phoenixLogo} 
             alt="Sphoenix Loading..." 
-            className="w-24 h-24 object-contain"
+            className="w-16 h-16 object-contain"
           />
         </div>
       </div>

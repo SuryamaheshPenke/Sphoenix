@@ -46,6 +46,14 @@ const ScrollToContactIndex = () => {
 const App = () => {
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    // Wait for page to load, then show spinner briefly
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
