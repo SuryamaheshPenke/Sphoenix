@@ -46,13 +46,9 @@ const ScrollToContactIndex = () => {
 const App = () => {
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Wait for page to load, then show spinner briefly
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, []);
+  const handleSpinnerComplete = () => {
+    setLoading(false);
+  };
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -60,7 +56,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <div className="dark">
-          {loading && <PhoenixSpinner onComplete={() => setLoading(false)} />}
+          {loading && <PhoenixSpinner onComplete={handleSpinnerComplete} />}
           <BrowserRouter>
           <ScrollToTop />
           <Routes>
