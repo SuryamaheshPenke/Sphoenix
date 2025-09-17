@@ -1,4 +1,4 @@
-import { Star, Quote, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Star, Quote, ArrowLeft, ArrowRight, User, Briefcase, Trophy, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useState } from 'react';
@@ -11,7 +11,7 @@ const Testimonials = () => {
       name: 'Sarah Johnson',
       role: 'Software Engineer',
       company: 'TechCorp',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b332c4e3?w=100&h=100&fit=crop&crop=face',
+      icon: <User className="h-8 w-8" />,
       content: 'Sphoenix transformed my career completely. Their comprehensive training program equipped me with cutting-edge skills in cloud computing and DevOps. The personalized mentorship and job placement assistance helped me land my dream job at a Fortune 500 company.',
       rating: 5
     },
@@ -19,7 +19,7 @@ const Testimonials = () => {
       name: 'Michael Chen',
       role: 'Data Scientist',
       company: 'DataFlow Solutions',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+      icon: <Briefcase className="h-8 w-8" />,
       content: 'The IT consulting services provided by Sphoenix were exceptional. They helped us modernize our entire data infrastructure and implement machine learning solutions that increased our efficiency by 40%. Their expertise is unmatched.',
       rating: 5
     },
@@ -27,7 +27,7 @@ const Testimonials = () => {
       name: 'Emily Rodriguez',
       role: 'Project Manager',
       company: 'InnovateTech',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
+      icon: <Trophy className="h-8 w-8" />,
       content: 'Working with Sphoenix for our staffing needs was a game-changer. They provided us with highly skilled developers who seamlessly integrated into our team. The quality of candidates and their technical expertise exceeded our expectations.',
       rating: 5
     },
@@ -35,7 +35,7 @@ const Testimonials = () => {
       name: 'David Kim',
       role: 'CTO',
       company: 'StartupX',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
+      icon: <Users className="h-8 w-8" />,
       content: 'Sphoenix\'s digital transformation consulting helped us scale from a small startup to a thriving tech company. Their strategic guidance and technical expertise were instrumental in our 300% growth over two years.',
       rating: 5
     },
@@ -43,7 +43,7 @@ const Testimonials = () => {
       name: 'Lisa Wang',
       role: 'Full Stack Developer',
       company: 'WebSolutions Inc',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b332c4e3?w=100&h=100&fit=crop&crop=face',
+      icon: <User className="h-8 w-8" />,
       content: 'The career coaching and interview preparation I received was outstanding. Not only did I improve my technical skills, but I also gained confidence in presenting myself professionally. I received three job offers within a month of completing the program.',
       rating: 5
     }
@@ -101,11 +101,9 @@ const Testimonials = () => {
               </blockquote>
               
               <div className="flex items-center justify-center gap-4">
-                <img
-                  src={currentTestimonial.image}
-                  alt={currentTestimonial.name}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-primary/20"
-                />
+                <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground border-2 border-primary/20">
+                  {currentTestimonial.icon}
+                </div>
                 <div className="text-center">
                   <div className="font-poppins font-semibold text-lg text-foreground">
                     {currentTestimonial.name}
@@ -176,11 +174,11 @@ const Testimonials = () => {
                   "{testimonial.content.substring(0, 120)}..."
                 </p>
                 <div className="flex items-center gap-3">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-10 h-10 rounded-full object-cover"
-                  />
+                  <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground">
+                    <div className="scale-75">
+                      {testimonial.icon}
+                    </div>
+                  </div>
                   <div>
                     <div className="font-semibold text-sm text-foreground">
                       {testimonial.name}

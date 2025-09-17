@@ -101,7 +101,7 @@ const Contact = () => {
     {
       country: 'USA',
       flag: '🇺🇸',
-      address: '17201, NW Viola Street, Portland 97229, Oregon'
+      address: 'New York, NY, USA'
     },
     {
       country: 'Canada',
@@ -111,7 +111,7 @@ const Contact = () => {
     {
       country: 'India',
       flag: '🇮🇳',
-      address: 'B.K.Guda, SR Nagar, Hyderabad-500038'
+      address: 'Cyber Gateway, Hi-tech City, Hyderabad'
     }
   ];
 
