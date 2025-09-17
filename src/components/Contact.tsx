@@ -30,7 +30,7 @@ const Contact = () => {
       // EmailJS configuration - replace with your actual values
       const serviceId = 'service_11por2e';
       const templateId = 'template_k9qitzd';
-      const autoReplyTemplateId = 'template_auto_reply'; // Auto-reply template
+      const autoReplyTemplateId = 'template_wd2ypgl'; // Auto-reply template
       const publicKey = '5e-yTxPE7ly7_gOBe';
 
       // Template params for main email to company
