@@ -30,8 +30,10 @@ const Contact = () => {
       // EmailJS configuration - replace with your actual values
       const serviceId = 'service_11por2e';
       const templateId = 'template_k9qitzd';
+      const autoReplyTemplateId = 'template_auto_reply'; // Auto-reply template
       const publicKey = '5e-yTxPE7ly7_gOBe';
 
+      // Template params for main email to company
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
@@ -41,11 +43,23 @@ const Contact = () => {
         to_name: 'Sphoenix Team',
       };
 
+      // Template params for auto-reply to customer
+      const autoReplyParams = {
+        to_name: formData.name,
+        to_email: formData.email,
+        company_name: 'Sphoenix',
+        service_requested: formData.service,
+      };
+
+      // Send main email to company
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      // Send auto-reply to customer
+      await emailjs.send(serviceId, autoReplyTemplateId, autoReplyParams, publicKey);
       
       setSubmitStatus({
         type: 'success',
-        message: 'Thank you for your message! We will get back to you within 24 hours.'
+        message: 'Thank you for your message! We have sent you a confirmation email and will get back to you within 24 hours.'
       });
       
       // Reset form
