@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import phoenixIcon from '@/assets/phoenix-icon.png';
+import phoenixLogo from '@/assets/phoenix-logo-transparent.png';
 
 const PhoenixSpinner = ({ onComplete }: { onComplete: () => void }) => {
   const [isVisible, setIsVisible] = useState(true);
@@ -15,21 +15,14 @@ const PhoenixSpinner = ({ onComplete }: { onComplete: () => void }) => {
 
   if (!isVisible) {
     return (
-      <div className="fixed inset-0 z-[9999] bg-background flex items-center justify-center animate-fade-out">
+      <div className="fixed inset-0 z-[9999] bg-transparent flex items-center justify-center animate-fade-out">
         <div className="relative">
-          <div className="phoenix-soar">
+          <div className="animate-spin">
             <img 
-              src={phoenixIcon} 
+              src={phoenixLogo} 
               alt="Sphoenix Loading..." 
-              className="w-20 h-20 object-contain"
+              className="w-24 h-24 object-contain"
             />
-          </div>
-          <div className="mt-6 text-center">
-            <div className="phoenix-flame-dots">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
           </div>
         </div>
       </div>
@@ -37,21 +30,14 @@ const PhoenixSpinner = ({ onComplete }: { onComplete: () => void }) => {
   }
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-background flex items-center justify-center">
+    <div className="fixed inset-0 z-[9999] bg-transparent flex items-center justify-center">
       <div className="relative">
-        <div className="phoenix-soar">
+        <div className="animate-spin">
           <img 
-            src={phoenixIcon} 
+            src={phoenixLogo} 
             alt="Sphoenix Loading..." 
-            className="w-20 h-20 object-contain"
+            className="w-24 h-24 object-contain"
           />
-        </div>
-        <div className="mt-6 text-center">
-          <div className="phoenix-flame-dots">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
         </div>
       </div>
     </div>
