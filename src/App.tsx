@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -25,7 +25,7 @@ import OpenPositions from "./pages/careers/OpenPositions";
 import Internships from "./pages/careers/Internships";
 import HowToApply from "./pages/careers/HowToApply";
 import BenefitsCulture from "./pages/careers/BenefitsCulture";
-import PhoenixSpinner from "./components/PhoenixSpinner";
+
 import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound";
 
@@ -44,11 +44,6 @@ const ScrollToContactIndex = () => {
 };
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
-
-  const handleSpinnerComplete = () => {
-    setLoading(false);
-  };
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -56,7 +51,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <div className="dark">
-          {loading && <PhoenixSpinner onComplete={handleSpinnerComplete} />}
+          
           <BrowserRouter>
           <ScrollToTop />
           <Routes>
