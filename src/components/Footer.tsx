@@ -175,23 +175,6 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-
-            {/* Newsletter */}
-            <div>
-              <h4 className="font-medium text-background/90 mb-3">Stay Updated</h4>
-              <div className="flex gap-2">
-                <Input
-                  placeholder="Your email"
-                  className="bg-background/10 border-background/20 text-background placeholder:text-background/50 focus:border-primary"
-                />
-                <Button
-                  size="sm"
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 transition-smooth"
-                >
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
           </div>
         </div>
 
