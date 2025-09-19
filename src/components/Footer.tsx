@@ -160,9 +160,12 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                <div>
-                  <a href="tel:+917673949165" className="text-background/80 hover:text-background transition-smooth">
+                <div className="space-y-1">
+                  <a href="tel:+917673949165" className="text-background/80 hover:text-background transition-smooth block">
                     +91 7673949165
+                  </a>
+                  <a href="tel:+917396257590" className="text-background/80 hover:text-background transition-smooth block">
+                    +91 7396257590
                   </a>
                 </div>
               </div>
@@ -182,16 +185,16 @@ const Footer = () => {
         <div className="border-t border-background/20 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-background/70 text-sm">
-              © 2024 Sphoenix. All rights reserved.
+              © 2020 Sphoenix. All rights reserved.
             </div>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-background/70 hover:text-background transition-smooth">
+              <a href="/privacy-policy" className="text-background/70 hover:text-background transition-smooth">
                 Privacy Policy
               </a>
-              <a href="#" className="text-background/70 hover:text-background transition-smooth">
+              <a href="/terms-of-service" className="text-background/70 hover:text-background transition-smooth">
                 Terms of Service
               </a>
-              <a href="#" className="text-background/70 hover:text-background transition-smooth">
+              <a href="/cookie-policy" className="text-background/70 hover:text-background transition-smooth">
                 Cookie Policy
               </a>
             </div>

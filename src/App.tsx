@@ -25,6 +25,9 @@ import OpenPositions from "./pages/careers/OpenPositions";
 import Internships from "./pages/careers/Internships";
 import HowToApply from "./pages/careers/HowToApply";
 import BenefitsCulture from "./pages/careers/BenefitsCulture";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import CookiePolicy from "./pages/CookiePolicy";
 
 import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound";
@@ -77,6 +80,9 @@ const App = () => {
             <Route path="/careers/internships" element={<Internships />} />
             <Route path="/careers/how-to-apply" element={<HowToApply />} />
             <Route path="/careers/benefits-culture" element={<BenefitsCulture />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
