@@ -50,10 +50,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Facebook className="h-5 w-5" />, url: '#', label: 'Facebook' },
-    { icon: <Twitter className="h-5 w-5" />, url: '#', label: 'Twitter' },
-    { icon: <Linkedin className="h-5 w-5" />, url: '#', label: 'LinkedIn' },
-    { icon: <Instagram className="h-5 w-5" />, url: '#', label: 'Instagram' },
+    { icon: Facebook, url: 'https://www.facebook.com/share/1FG9JrqCpL/', label: 'Facebook' },
+    { icon: Twitter, url: 'https://x.com/sphoenixit', label: 'Twitter' },
+    { icon: Linkedin, url: 'https://www.linkedin.com/company/sphoenix-it-solutions/', label: 'LinkedIn' },
+    { icon: Instagram, url: 'https://www.instagram.com/sphoenixitsol/', label: 'Instagram' },
   ];
 
   return (
@@ -73,17 +73,20 @@ const Footer = () => {
               At Sphoenix, we simplify talent discovery and deliver excellence with integrity, innovation, and impact. Empowering careers and transforming businesses through technology.
             </p>
             <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <Button
-                  key={index}
-                  variant="secondary"
-                  size="sm"
-                  className="w-10 h-10 p-0 rounded-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none transition-smooth hover-scale shadow-glow"
-                  onClick={() => window.open(social.url, '_blank')}
-                >
-                  {social.icon}
-                </Button>
-              ))}
+              {socialLinks.map((social, index) => {
+                const IconComponent = social.icon;
+                return (
+                  <Button
+                    key={index}
+                    variant="secondary"
+                    size="sm"
+                    className="w-10 h-10 p-0 rounded-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none transition-smooth hover-scale shadow-glow"
+                    onClick={() => window.open(social.url, '_blank')}
+                  >
+                    <IconComponent className="h-5 w-5" />
+                  </Button>
+                );
+              })}
             </div>
           </div>
 
@@ -150,7 +153,9 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                 <div>
                   <div className="text-background/90 font-medium mb-1">USA Office</div>
-                  <div className="text-background/70 text-sm">17201, NW Viola Street, Portland 97229, Oregon</div>
+                  <div className="text-background/70 text-sm">New York, NY, USA</div>
+                  <div className="text-background/90 font-medium mb-1 mt-3">India Office</div>
+                  <div className="text-background/70 text-sm">Cyber Gateway, Hi-tech City, Hyderabad</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
